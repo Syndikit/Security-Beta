@@ -1,32 +1,31 @@
+package proxy;
 // Purpose: Establish a local Java server for testing encryption and message actions
 // Imports vanilla Java networking and I/O packages
 import java.net.*;
 import java.io.*;
 
-public class EServer extends Thread {
+public class EServer extends Thread{
 
     // Sets port 8081 as immutable port to be used in Main()
     public static final int PORT_NUMBER = 8081;
     protected Socket socket;
 
-    private EServer(Socket socket)
-    {
+    private EServer(Socket socket) {
         this.socket = socket;
         System.out.println("New client connected from: " + socket.getInetAddress().getHostAddress());
         start();
     }
 
-    /* 
-    Creates input and output streams, checks whether messages come through, and closes streams and socket upon completion. 
-    Catches and throws IOExceptions and prints to console
-    */
-    public void run()
-    {
+    /*
+     * Creates input and output streams, checks whether messages come through, and
+     * closes streams and socket upon completion. Catches and throws IOExceptions
+     * and prints to console
+     */
+    public void run() {
         InputStream input = null;
         OutputStream output = null;
 
-        try 
-        {
+        try {
             input = socket.getInputStream();
             output = socket.getOutputStream();
 
@@ -34,19 +33,14 @@ public class EServer extends Thread {
 
             String request;
 
-            while ((request = reader.readLine()) != null) 
-            {
+            while ((request = reader.readLine()) != null) {
                 System.out.println("Message received! " + request);
                 request += '\n';
                 output.write(request.getBytes());
             }
-        } 
-        catch (IOException e) 
-        {
+        } catch (IOException e) {
             System.out.println("Unable to get streams from client.");
-        }
-        finally
-        {
+        } finally {
             try {
                 input.close();
                 output.close();
@@ -65,20 +59,19 @@ public class EServer extends Thread {
             while (true) {
                 new EServer(serv.accept());
             }
-            
+
         } catch (IOException e) {
             System.out.println("Cannot start server.");
-        }finally{
+        } finally {
             try {
-                if(serv != null){
+                if (serv != null) {
                     serv.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        
-    }
-    
-}
 
+    }
+
+}
