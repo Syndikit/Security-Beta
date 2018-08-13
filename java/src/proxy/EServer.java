@@ -59,9 +59,9 @@ public class EServer extends Thread {
 
     public static void main(String args[]) throws IOException {
         System.out.println("Server for Proxy");
-        EServer serv = null;
+        ServerSocket serv = null;
         try {
-            serv = new EServer(PORT_NUMBER);
+            serv = new ServerSocket(PORT_NUMBER);
             while (true) {
                 new EServer(serv.accept());
             }
