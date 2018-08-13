@@ -1,5 +1,4 @@
-package proxy;
-// Purpose: Establish a local Java server for testing encryption and message actions
+ // Purpose: Establish a local Java server for testing encryption and message actions
 // Imports vanilla Java networking and I/O packages
 import java.net.*;
 import java.io.*;

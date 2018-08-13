@@ -4,7 +4,7 @@ package proxy;
 import java.net.*;
 import java.io.*;
 
-public class EClient{
+public class EClient {
 
     public EClient(String host, int port) {
         try {
@@ -47,11 +47,5 @@ public class EClient{
             e.printStackTrace();
         }
 
-    }
-
-    public static void main(String[] args) {
-        String host = "127.0.0.1";
-        int port = 8081;
-        new EClient(host, port);
     }
 }

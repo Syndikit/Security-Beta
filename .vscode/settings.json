@@ -1,5 +1,10 @@
 {
     "python.pythonPath": "/Users/michael/anaconda3/bin/python3",
     "java.home": "/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home",
-    "editor.wordWrap": "wordWrapColumn"
+    "editor.wordWrap": "wordWrapColumn",
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 14,
+    "maven.executable.path": "/usr/local/bin/mvn",
+    "maven.terminal.useJavaHome": true,
+    "git.defaultCloneDirectory": "/Users/michael/Desktop"
 }
