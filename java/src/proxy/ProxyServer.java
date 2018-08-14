@@ -3,8 +3,6 @@ package proxy;
 import java.io.*;
 import java.net.*;
 
-import sun.tools.tree.FinallyStatement;
-
 public class ProxyServer extends Thread {
 
     // Sets a constant value for the port number and instantiates a Socket called
