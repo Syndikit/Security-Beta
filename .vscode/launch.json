@@ -4,7 +4,6 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
         {
             "type": "java",
             "name": "Debug (Launch)",
@@ -16,31 +15,28 @@
             "args": ""
         },
         {
+            "name": "Debug Java",
             "type": "java",
-            "name": "Debug (Launch)-EServer",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "EServer",
-            "args": ""
+            "externalConsole": true,                //user input dosen't work if set it to false :(
+            "stopOnEntry": true,
+            "preLaunchTask": "build",                 // Runs the task created above before running this configuration
+            "jdkPath": "${env:JAVA_HOME}/bin",        // You need to set JAVA_HOME enviroment variable
+            "cwd": "${workspaceRoot}",
+            "startupClass": "${workspaceRoot}${file}",
+            "sourcePath": ["${workspaceRoot}"],   // Indicates where your source (.java) files are
+            "classpath": ["${workspaceRoot}"],    // Indicates the location of your .class files
+            "options": [],                             // Additional options to pass to the java executable
+            "args": []                                // Command line arguments to pass to the startup class
         },
-        {
-            "type": "java",
-            "name": "Debug (Launch)-EClient",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "proxy.EClient",
-            "args": ""
-        },
+
+
         {
             "type": "java",
             "name": "Debug (Attach)",
             "request": "attach",
             "hostName": "localhost",
-            "port": "<debug port of remote debuggee>"
+            "port": 9000
         }
     ]
 }

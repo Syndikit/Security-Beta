@@ -2,7 +2,6 @@ package proxy;
 
 import java.io.*;
 import java.net.*;
-import proxy.*;
 
 public class Main {
 
