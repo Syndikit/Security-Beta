@@ -4,7 +4,7 @@ import logging
 # Make a log file
 log_dir = ""
 
-# Format the log
+# Format the logms d sc sd ca k  
 logging.basicConfig(filename=(log_dir+ "key_log.txt"), level=logging.DEBUG, format= '%(asctime)s: %(message)s')
 
 # Function to monitor keyword inputs 

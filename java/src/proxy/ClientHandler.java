@@ -15,6 +15,7 @@ public class ClientHandler implements Runnable{
         this.responseText = ("HTTP/1.1 200 OK\n\nClientHandler: " + this.serverText + " - ");
     }
 
+    @Override
     public void run(){
 
         try {
